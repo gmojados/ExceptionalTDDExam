@@ -35,7 +35,18 @@ public class Handles {
         }
 
     }
+    public void remove (String userHandle) {
+        mapOfHandles.remove(userHandle);
+    }
 
+    public void changeHandle (String name, String currentHandle, String newHandle){
+       mapOfHandles.replace(name, currentHandle,newHandle);
+
+    }
+
+    public Map<String, String> getMapOfHandles() {
+        return mapOfHandles;
+    }
 
     @Override
     public String toString() {

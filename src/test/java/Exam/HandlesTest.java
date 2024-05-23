@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 class HandlesTest {
-    private Map<String, String> mapOfHandles;
     Handles h1;
 
     @BeforeEach
@@ -32,13 +31,29 @@ class HandlesTest {
 
     }
     @Test
-    void displayName(){
+    void testRemove(){
         //when
-        expectedOutput = displayName();
-        //then
-        Assertions.assertEquals();
+       h1.remove("@jubilee");
 
+        //then
+        Assertions.assertTrue(h1.getMapOfHandles().containsValue("@jubilee"));
     }
+    @Test
+    void testChangehandle () {
+        h1.changeHandle("Julian","@jubilee","@j-money");
+
+        //then
+        Assertions.assertEquals("@j-money",h1.getMapOfHandles().get("Julian"));
+    }
+
+//    @Test
+//    void displayName(){
+//        //when
+//        expectedOutput = displayName();
+//        //then
+//        Assertions.assertEquals();
+//
+//    }
 
 
 
